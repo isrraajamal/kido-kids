@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details | Kido Kids</title>
+    <meta
+      name="description"
+      content="View detailed information, designs, and sizes for Kido Kids products."
+    />
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+    <link rel="apple-touch-icon" href="images/favicon.svg" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/home-enhancements.css" />
+    <!-- Immediate Product Pre-Hydration & High-Priority Asset Preload -->
+    <script src="js/products-data.js"></script>
+    <script>
+      (function () {
+        try {
+          var urlParams = new URLSearchParams(window.location.search);
+          var pid = parseInt(urlParams.get("id") || "1", 10);
+          var p = typeof getProductById === "function" ? getProductById(pid) : null;
+          if (p) {
+            window.__KIDO_PRELOADED_PRODUCT = p;
+            document.title = p.name + " | Kido Kids";
+            var targetImg = (p.gallery && p.gallery.length > 0) ? p.gallery[0] : p.image;
+            if (targetImg) {
+              var preloadLink = document.createElement("link");
+              preloadLink.rel = "preload";
+              preloadLink.as = "image";
+              preloadLink.href = targetImg;
+              document.head.appendChild(preloadLink);
+            }
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <nav class="navbar navbar-expand-lg">
+          <a class="navbar-brand" href="index.html">
+            <svg
+              preserveAspectRatio="none"
+              data-bbox="20 20 160 160"
+              viewBox="20 20 160 160"
+              height="22"
+              width="22"
+              xmlns="http://www.w3.org/2000/svg"
+              data-type="color"
+              role="presentation"
+              aria-hidden="true"
+            >
+              <g>
+                <path
+                  d="M100.002 139.589h-.004L100 140c0 22.091-17.909 40-40 40s-40-17.909-40-40c0-21.953 17.685-39.776 39.586-39.998v-.003C37.685 99.776 20 81.954 20 60c0-22.092 17.909-40 40-40 21.4 0 38.875 16.805 39.948 37.938h.105C101.125 36.805 118.6 20 140 20c22.091 0 40 17.909 40 40 0 21.954-17.687 39.778-39.589 39.998v.003C162.313 100.222 180 118.045 180 140c0 22.091-17.909 40-40 40s-40-17.909-40-40l.002-.411z"
+                  fill="#000"
+                  clip-rule="evenodd"
+                  fill-rule="evenodd"
+                ></path>
+              </g>
+            </svg>
+            <span>Kido Kids</span>
+          </a>
+          <!-- Mobile Offcanvas Toggler -->
+          <button
+            class="navbar-toggler kido-navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#menu"
+            aria-controls="menu"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Offcanvas Side Drawer (Mobile) & Horizontal Navbar (Desktop) -->
+          <div class="offcanvas offcanvas-end kido-offcanvas" tabindex="-1" id="menu" aria-labelledby="menuLabel">
+            <div class="offcanvas-header d-lg-none">
+              <a class="navbar-brand m-0" href="index.html">
+                <svg
+                  preserveAspectRatio="none"
+                  data-bbox="20 20 160 160"
+                  viewBox="20 20 160 160"
+                  height="22"
+                  width="22"
+                  xmlns="http://www.w3.org/2000/svg"
+                  data-type="color"
+                  role="presentation"
+                  aria-hidden="true"
+                >
+                  <g>
+                    <path
+                      d="M100.002 139.589h-.004L100 140c0 22.091-17.909 40-40 40s-40-17.909-40-40c0-21.953 17.685-39.776 39.586-39.998v-.003C37.685 99.776 20 81.954 20 60c0-22.092 17.909-40 40-40 21.4 0 38.875 16.805 39.948 37.938h.105C101.125 36.805 118.6 20 140 20c22.091 0 40 17.909 40 40 0 21.954-17.687 39.778-39.589 39.998v.003C162.313 100.222 180 118.045 180 140c0 22.091-17.909 40-40 40s-40-17.909-40-40l.002-.411z"
+                      fill="#000"
+                      clip-rule="evenodd"
+                      fill-rule="evenodd"
+                    ></path>
+                  </g>
+                </svg>
+                <span id="menuLabel">Kido Kids</span>
+              </a>
+              <button
+                type="button"
+                class="kido-drawer-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+
+            <div class="offcanvas-body">
+              <!-- Customer Welcome / Profile Badge (mobile only) -->
+              <div class="drawer-user-card d-lg-none">
+                <div class="user-card-avatar">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <div class="user-card-info">
+                  <strong class="user-card-name drawer-user-name">Welcome to Kido!</strong>
+                  <a href="login.html" class="user-card-link">Sign In / Join Family ›</a>
+                </div>
+              </div>
+
+
+              <div class="center-menu">
+                <ul class="nav-menu navbar-nav">
+                  <li>
+                    <a href="index.html">
+                      <span>Home</span>
+                      <svg class="nav-chevron d-lg-none" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="shop.html">
+                      <span>Shop All</span>
+                      <svg class="nav-chevron d-lg-none" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="about.html">
+                      <span>About Us</span>
+                      <svg class="nav-chevron d-lg-none" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="contact.html">
+                      <span>Contact Us</span>
+                      <svg class="nav-chevron d-lg-none" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="links header-actions">
+                <!-- Wishlist quick link -->
+                <a href="wishlist.html" class="header-action-btn wishlist-header-btn" title="Saved Favorites" aria-label="Wishlist">
+                  <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                  </svg>
+                  <span class="drawer-action-text d-lg-none">Wishlist</span>
+                  <span class="wishlist-count-badge">4</span>
+                </a>
+                
+                <!-- Log in button -->
+                <a href="login.html" class="header-login-btn">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                  <span>Log in</span>
+                </a>
+
+                <!-- Cart Button with Count Badge -->
+                <a href="cart.html" class="custom-btn cart-btn-wrapper" aria-label="Cart">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    version="1.1"
+                    width="45px"
+                    height="20px"
+                    viewBox="0 0 329.7 134.5"
+                    data-hook="svg-icon-6"
+                  >
+                    <path
+                      class="ptVJi9"
+                      d="M281.6 3c35.7 10.7 56 47.6 45.2 83.3s-47.6 56-83.3 45.2c-35.7-10.7-56-47.6-45.2-83.3C209 13.1 245.9-7.2 281.6 3z"
+                    ></path>
+                    <text
+                      x="265"
+                      y="69"
+                      dy=".35em"
+                      text-anchor="middle"
+                      class="uxskpx"
+                      data-hook="items-count"
+                    >
+                      0
+                    </text>
+                    <path
+                      d="M74.1 134.4c-8.7 0-16.2-7.4-16.2-16.2S65.3 102 74.1 102s16.2 7.4 16.2 16.2-7.4 16.2-16.2 16.2zm0-21.7c-3.1 0-5.6 2.5-5.6 5.6s2.5 5.6 5.6 5.6 5.6-2.5 5.6-5.6-2.5-5.6-5.6-5.6zM120.5 134.5c-8.7 0-16.2-7.4-16.2-16.2s7.4-16.2 16.2-16.2 16.2 7.4 16.2 16.2-7.4 16.2-16.2 16.2zm0-21.7c-3.1 0-5.6 2.5-5.6 5.6s2.5 5.6 5.6 5.6c3.1 0 5.6-2.5 5.6-5.6s-2.5-5.6-5.6-5.6z"
+                    ></path>
+                    <path
+                      d="M141.2 92.1L53.5 92.1 23 10.6 0 10.6 0 0 30.4 0 61.2 81.6 133.5 81.6 152.4 30.4 38.5 30.4 34.8 19.9 167.9 19.9z"
+                    ></path>
+                  </svg>
+                  <span class="drawer-action-text d-lg-none">My Bag</span>
+                </a>
+              </div>
+
+              <!-- Eco Brand Guarantee (mobile only) -->
+              <div class="drawer-eco-banner d-lg-none">
+                <svg class="eco-banner-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#3b6e51" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
+                  <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+                </svg>
+                <span>100% GOTS Organic Cotton • Happiness Guarantee</span>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="product-detail pdp-page-wrapper">
+      <!-- Breadcrumb Bar -->
+      <section class="pdp-breadcrumb-section">
+        <div class="container">
+          <nav class="pdp-breadcrumb-nav" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="index.html">Home</a></li>
+              <li class="sep">/</li>
+              <li><a href="shop.html">All Products</a></li>
+              <li class="sep">/</li>
+              <li class="current breadcrumb-product-name" aria-current="page">Recycled Material Shorts</li>
+            </ol>
+          </nav>
+        </div>
+      </section>
+
+      <!-- Main Product Grid Section -->
+      <section class="pdp-main-section">
+        <div class="container">
+          <div class="pdp-layout-grid">
+            <!-- Left: Premium Gallery Card -->
+            <div class="pdp-gallery-card">
+              <div class="pdp-main-img-wrap" id="mainImgWrap">
+                <span class="pdp-badge-pill" id="pdpBadge">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  </svg>
+                  <span id="pdpBadgeText">100% GOTS Organic Cotton</span>
+                </span>
+
+                <img src="" alt="Product Image" class="product-img" id="mainProductImg" />
+                <script>
+                  (function () {
+                    var p = window.__KIDO_PRELOADED_PRODUCT;
+                    if (!p && typeof getProductById === "function") {
+                      var pid = parseInt(new URLSearchParams(window.location.search).get("id") || "1", 10);
+                      p = getProductById(pid);
+                    }
+                    if (p) {
+                      var img = document.getElementById("mainProductImg");
+                      if (img) {
+                        var target = (p.gallery && p.gallery.length > 0) ? p.gallery[0] : p.image;
+                        img.src = target;
+                        img.alt = p.name;
+                      }
+                    }
+                  })();
+                </script>
+
+                <button class="pdp-zoom-trigger-btn" type="button" id="pdpZoomBtn" title="Zoom in">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    <line x1="11" y1="8" x2="11" y2="14"></line>
+                    <line x1="8" y1="11" x2="14" y2="11"></line>
+                  </svg>
+                </button>
+              </div>
+
+              <!-- Thumbnails Row -->
+              <div class="pdp-thumb-list" id="pdpThumbList">
+                <!-- Dynamically populated or rendered -->
+              </div>
+
+              <!-- Gallery Parent Perks -->
+              <div class="pdp-gallery-perks">
+                <div class="pdp-mini-perk">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                  <span>Hypoallergenic</span>
+                </div>
+                <div class="pdp-mini-perk">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="m4.93 4.93 4.24 4.24"></path>
+                    <path d="m14.83 9.17 4.24-4.24"></path>
+                    <path d="m14.83 14.83 4.24 4.24"></path>
+                    <path d="m9.17 14.83-4.24 4.24"></path>
+                  </svg>
+                  <span>Pre-Washed Soft</span>
+                </div>
+                <div class="pdp-mini-perk">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                    <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                  </svg>
+                  <span>Carbon-Free Ship</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Product Information & Purchase Column -->
+            <div class="pdp-info-col">
+              <div class="pdp-meta-row">
+                <span class="pdp-category-tag" id="pdpCategoryTag">Party Wear</span>
+                <div class="pdp-rating-badge">
+                  <span class="pdp-rating-stars">★★★★★</span>
+                  <strong>4.9</strong>
+                  <span class="pdp-reviews-count" id="pdpReviewsJump">(128 reviews)</span>
+                </div>
+              </div>
+
+              <h1 class="pdp-title product-title"></h1>
+
+              <div class="pdp-price-box">
+                <span class="pdp-price product-price"></span>
+                <span class="pdp-stock-status">
+                  <span class="pulse-dot"></span>
+                  <span id="stockStatusText">In Stock • Ready to ship</span>
+                </span>
+              </div>
+
+              <p class="pdp-description product-description"></p>
+              <script>
+                (function () {
+                  var p = window.__KIDO_PRELOADED_PRODUCT;
+                  if (!p && typeof getProductById === "function") {
+                    var pid = parseInt(new URLSearchParams(window.location.search).get("id") || "1", 10);
+                    p = getProductById(pid);
+                  }
+                  if (p) {
+                    var t = document.querySelector(".product-title");
+                    if (t) t.textContent = p.name;
+                    var pr = document.querySelector(".product-price");
+                    if (pr) pr.textContent = "$" + Number(p.price).toFixed(2);
+                    var d = document.querySelector(".product-description");
+                    if (d) d.textContent = p.description;
+                    var bc = document.querySelector(".breadcrumb-product-name");
+                    if (bc) bc.textContent = p.name;
+                    var c = document.getElementById("pdpCategoryTag");
+                    if (c && p.category) c.textContent = p.category.replace("-", " ").toUpperCase();
+                    var b = document.getElementById("pdpBadgeText");
+                    if (b) {
+                      if (p.category === "eco-friendly") b.textContent = "Eco-Certified Recycled Blend";
+                      else if (p.category === "party-wear") b.textContent = "Luxury Organic Partywear";
+                      else b.textContent = "100% GOTS Organic Cotton";
+                    }
+                  }
+                })();
+              </script>
+
+              <!-- Design / Pattern Swatches -->
+              <div class="pdp-option-section" id="designOptionSection">
+                <div class="pdp-option-header">
+                  <span class="pdp-option-label">
+                    Color: <strong id="selectedDesignDisplay" class="pdp-option-value">Soft Lavender</strong>
+                  </span>
+                </div>
+                <div class="pdp-swatches-grid" id="designChipsRow">
+                  <button type="button" class="pdp-swatch-chip active" data-design="Soft Lavender" title="Soft Lavender" aria-label="Select color: Soft Lavender">
+                    <span class="pdp-swatch-preview pdp-swatch-lavender" aria-hidden="true"></span>
+                  </button>
+                  <button type="button" class="pdp-swatch-chip" data-design="Meadow Green" title="Meadow Green" aria-label="Select color: Meadow Green">
+                    <span class="pdp-swatch-preview pdp-swatch-green" aria-hidden="true"></span>
+                  </button>
+                  <button type="button" class="pdp-swatch-chip" data-design="Chamomile Yellow" title="Chamomile Yellow" aria-label="Select color: Chamomile Yellow">
+                    <span class="pdp-swatch-preview pdp-swatch-yellow" aria-hidden="true"></span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Interactive Size Chips & Size Guide Link -->
+              <div class="pdp-option-section" id="sizeOptionSection">
+                <div class="pdp-option-header">
+                  <span class="pdp-option-label">
+                    Size: <strong id="selectedSizeDisplay" class="pdp-option-value">4Y (3–4 Yrs)</strong>
+                  </span>
+                  <button type="button" class="pdp-size-guide-link" id="btnOpenSizeGuide" aria-label="Open size guide modal">
+                    <svg class="pdp-ruler-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+                      <line x1="6" y1="6" x2="6" y2="10"></line>
+                      <line x1="10" y1="6" x2="10" y2="10"></line>
+                      <line x1="14" y1="6" x2="14" y2="10"></line>
+                      <line x1="18" y1="6" x2="18" y2="10"></line>
+                    </svg>
+                    <span>Size Guide</span>
+                  </button>
+                </div>
+
+                <div class="pdp-sizes-grid" id="sizeChipsRow">
+                  <button type="button" class="pdp-size-chip" data-size="2Y" aria-label="Select size 2Y">
+                    <span class="pdp-size-tag">2Y</span>
+                    <span class="pdp-size-sub">18–24M</span>
+                  </button>
+                  <button type="button" class="pdp-size-chip active" data-size="4Y" aria-label="Select size 4Y">
+                    <span class="pdp-size-tag">4Y</span>
+                    <span class="pdp-size-sub">3–4 Yrs</span>
+                  </button>
+                  <button type="button" class="pdp-size-chip" data-size="6Y" aria-label="Select size 6Y">
+                    <span class="pdp-size-tag">6Y</span>
+                    <span class="pdp-size-sub">5–6 Yrs</span>
+                  </button>
+                  <button type="button" class="pdp-size-chip" data-size="8Y" aria-label="Select size 8Y">
+                    <span class="pdp-size-tag">8Y</span>
+                    <span class="pdp-size-sub">7–8 Yrs</span>
+                  </button>
+                </div>
+
+                <div class="pdp-fit-note">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                  </svg>
+                  <span>Fits true to size. If between sizes, size up for growing room.</span>
+                </div>
+              </div>
+
+              <!-- Quantity, Add to Cart & Wishlist -->
+              <div class="pdp-action-area">
+                <div class="pdp-action-row">
+                  <div class="pdp-qty-stepper" role="group" aria-label="Select quantity">
+                    <button class="pdp-qty-btn quantity-decrement" type="button" aria-label="Decrease quantity">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    </button>
+                    <input type="number" class="pdp-qty-input quantity-input" value="1" min="1" max="50" readonly aria-label="Quantity" />
+                    <button class="pdp-qty-btn quantity-increment" type="button" aria-label="Increase quantity">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    </button>
+                  </div>
+
+                  <button class="pdp-add-cart-btn" type="button" id="pdpAddToCartBtn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                      <line x1="3" y1="6" x2="21" y2="6"></line>
+                      <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span>Add to Bag</span>
+                  </button>
+
+                  <button class="pdp-wishlist-toggle-btn" type="button" id="pdpWishlistBtn" aria-label="Save to Wishlist" title="Save to Favorites">
+                    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                  </button>
+                </div>
+
+                <!-- Clean shipping micro-perks right under action button -->
+                <div class="pdp-inline-perks">
+                  <div class="pdp-inline-perk">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="1" y="3" width="15" height="13"></rect>
+                      <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                      <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                      <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                    </svg>
+                    <span>Free shipping on orders over $50</span>
+                  </div>
+                  <span class="pdp-inline-perk-dot">•</span>
+                  <div class="pdp-inline-perk">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path>
+                      <path d="M21 3v5h-5"></path>
+                      <path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path>
+                      <path d="M3 21v-5h5"></path>
+                    </svg>
+                    <span>Easy 30-day exchanges</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 4 Trust Perks Grid -->
+              <div class="pdp-trust-grid">
+                <div class="pdp-trust-item">
+                  <div class="pdp-trust-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M5 12h14"></path>
+                      <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                  </div>
+                  <div class="pdp-trust-text">
+                    <strong>Fast 3–5 Day Delivery</strong>
+                    <span>Orders dispatched within 24h</span>
+                  </div>
+                </div>
+
+                <div class="pdp-trust-item">
+                  <div class="pdp-trust-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path>
+                      <path d="M21 3v5h-5"></path>
+                      <path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path>
+                      <path d="M3 21v-5h5"></path>
+                    </svg>
+                  </div>
+                  <div class="pdp-trust-text">
+                    <strong>30-Day Easy Swaps</strong>
+                    <span>Prepaid returns for growing kids</span>
+                  </div>
+                </div>
+
+                <div class="pdp-trust-item">
+                  <div class="pdp-trust-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                  </div>
+                  <div class="pdp-trust-text">
+                    <strong>GOTS Organic Certified</strong>
+                    <span>100% skin-safe & pediatric tested</span>
+                  </div>
+                </div>
+
+                <div class="pdp-trust-item">
+                  <div class="pdp-trust-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                  </div>
+                  <div class="pdp-trust-text">
+                    <strong>Secure Checkout</strong>
+                    <span>SSL encrypted with Apple Pay & cards</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product Details Accordion Tabs -->
+              <div class="pdp-accordion-wrap">
+                <div class="pdp-accordion-item open">
+                  <button type="button" class="pdp-accordion-trigger">
+                    <span class="pdp-accordion-icon">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
+                      </svg>
+                      <span>Fabric &amp; Sustainability Details</span>
+                    </span>
+                    <span class="pdp-accordion-arrow">▼</span>
+                  </button>
+                  <div class="pdp-accordion-body">
+                    <ul class="pdp-spec-list">
+                      <li>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Crafted from certified organic cotton &amp; eco-recycled fibers</span>
+                      </li>
+                      <li>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Ultra-flat smooth seams designed to prevent scratchiness &amp; sensory irritation</span>
+                      </li>
+                      <li>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Gentle elastic flex waistband with non-twisting inner reinforcement</span>
+                      </li>
+                      <li>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Coloured exclusively with non-toxic, water-based plant dyes</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="pdp-accordion-item">
+                  <button type="button" class="pdp-accordion-trigger">
+                    <span class="pdp-accordion-icon">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2v20"></path>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                      </svg>
+                      <span>Washing &amp; Garment Care</span>
+                    </span>
+                    <span class="pdp-accordion-arrow">▼</span>
+                  </button>
+                  <div class="pdp-accordion-body">
+                    <p>
+                      Machine wash inside out in cold water (30°C / 86°F) with eco-friendly mild detergent. Tumble dry on low heat or hang dry in the shade to preserve cloud-soft texture and vivid tones. No chlorine bleach or harsh fabric softeners needed.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="pdp-accordion-item">
+                  <button type="button" class="pdp-accordion-trigger">
+                    <span class="pdp-accordion-icon">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="1" y="3" width="15" height="13"></rect>
+                        <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                        <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                        <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                      </svg>
+                      <span>Shipping &amp; Free 30-Day Exchanges</span>
+                    </span>
+                    <span class="pdp-accordion-arrow">▼</span>
+                  </button>
+                  <div class="pdp-accordion-body">
+                    <p>
+                      Free Standard Shipping on all US orders over $50. Domestic orders arrive within 3–5 business days with live doorstep tracking. Need a different size? We offer instant free exchanges within 30 days of delivery.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Complete The Outfit / Related Products Section -->
+      <section class="pdp-related-section">
+        <div class="container">
+          <div class="pdp-related-header">
+            <span class="badge">CURATED FOR PLAY</span>
+            <h3>Complete The Outfit</h3>
+            <p>Thoughtfully paired organic essentials that parents and little ones adore together.</p>
+          </div>
+
+          <div class="pdp-related-grid" id="pdpRelatedGrid">
+            <!-- Dynamically populated from other ProductsList items -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Parent Reviews & Testimonials Section (Exact Match to Index Page Design) -->
+      <section id="testimonials" class="pdp-testimonials-section">
+        <div class="container">
+          <div class="text-center mb-5">
+            <span class="hero-tag-badge">COMMUNITY VERIFIED</span>
+            <h2 class="big-title">Loved By Real Families</h2>
+            <p class="section-subtitle">
+              Overall Parent Score: <strong style="color: var(--text-color); font-weight: 700;">4.9 / 5.0</strong> based on 128 verified customer orders
+            </p>
+          </div>
+
+          <div class="owl-carousel owl-theme testimonials-carousel">
+            <!-- Review 1 -->
+            <div class="item">
+              <div class="testimonial-card">
+                <div>
+                  <div class="testimonial-stars">★★★★★</div>
+                  <p class="testimonial-quote">
+                    "Finding clothes that don't irritate my son's eczema was a daily battle. These shorts are impossibly soft and the waistband never pinches his tummy. Ordering 2 more colors!"
+                  </p>
+                </div>
+                <div class="testimonial-author">
+                  <div class="author-avatar">
+                    <img src="images/smile-face.jpg" alt="Hannah M." />
+                  </div>
+                  <div class="author-info">
+                    <h5>Hannah M.</h5>
+                    <span>Mom of 4yo &bull; Size 4Y</span>
+                    <div class="verified-buyer-badge">✓ Verified Buyer</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="item">
+              <div class="testimonial-card">
+                <div>
+                  <div class="testimonial-stars">★★★★★</div>
+                  <p class="testimonial-quote">
+                    "Survives the playground sandbox, spilled juice, and hot summer washes without losing any of its shape or lavender color. Premium quality worth every single cent."
+                  </p>
+                </div>
+                <div class="testimonial-author">
+                  <div class="author-avatar">
+                    <img src="images/little-girl.jpg" alt="Elena S." />
+                  </div>
+                  <div class="author-info">
+                    <h5>Elena S.</h5>
+                    <span>Mom of 3yo &amp; 6yo &bull; Size 6Y</span>
+                    <div class="verified-buyer-badge">✓ Verified Buyer</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="item">
+              <div class="testimonial-card">
+                <div>
+                  <div class="testimonial-stars">★★★★★</div>
+                  <p class="testimonial-quote">
+                    "The fit is spot on with gentle flex. My daughter literally asks to wear them everyday. Plus knowing they're certified organic gives me peace of mind."
+                  </p>
+                </div>
+                <div class="testimonial-author">
+                  <div class="author-avatar">
+                    <img src="images/lookbook-1.jpg" alt="Marcus T." />
+                  </div>
+                  <div class="author-info">
+                    <h5>Marcus T.</h5>
+                    <span>Dad of 2 &bull; Size 2Y</span>
+                    <div class="verified-buyer-badge">✓ Verified Buyer</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review 4 -->
+            <div class="item">
+              <div class="testimonial-card">
+                <div>
+                  <div class="testimonial-stars">★★★★★</div>
+                  <p class="testimonial-quote">
+                    "The fabric is extraordinarily breathable and holds up beautifully after repeated washes. Knowing my kids are wearing safe, GOTS certified organic cotton makes all the difference."
+                  </p>
+                </div>
+                <div class="testimonial-author">
+                  <div class="author-avatar" style="background: #e0f8f1;">SM</div>
+                  <div class="author-info">
+                    <h5>Sarah Miller</h5>
+                    <span>Mom of Leo &amp; Maya</span>
+                    <div class="verified-buyer-badge">✓ Verified Buyer</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Size Guide Modal -->
+    <div class="pdp-modal-overlay" id="pdpSizeModal">
+      <div class="pdp-modal-card">
+        <button type="button" class="pdp-modal-close-btn" id="btnCloseSizeModal">&times;</button>
+        <span class="pdp-category-tag">FIT ADVISOR</span>
+        <h3 style="font-size: 24px; font-weight: 700; color: var(--text-color); margin: 8px 0;">Kido Kids Sizing Chart</h3>
+        <p style="font-size: 14px; color: rgba(64,62,62,0.7); line-height: 1.5;">
+          Our garments are designed true-to-age with comfortable flex room for joyful playtime movement. If your child is between measurements, we recommend sizing up.
+        </p>
+
+        <table class="pdp-size-table">
+          <thead>
+            <tr>
+              <th>Age / Size</th>
+              <th>Height (in / cm)</th>
+              <th>Weight (lbs / kg)</th>
+              <th>Waist (in)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>2Y (18–24m)</strong></td>
+              <td>33–36" / 84–91 cm</td>
+              <td>26–30 lbs / 12–14 kg</td>
+              <td>19.5"</td>
+            </tr>
+            <tr>
+              <td><strong>4Y (3–4 yrs)</strong></td>
+              <td>38–41" / 96–104 cm</td>
+              <td>33–38 lbs / 15–17 kg</td>
+              <td>21"</td>
+            </tr>
+            <tr>
+              <td><strong>6Y (5–6 yrs)</strong></td>
+              <td>44–47" / 112–119 cm</td>
+              <td>42–48 lbs / 19–22 kg</td>
+              <td>22.5"</td>
+            </tr>
+            <tr>
+              <td><strong>8Y (7–8 yrs)</strong></td>
+              <td>49–52" / 124–132 cm</td>
+              <td>54–62 lbs / 24–28 kg</td>
+              <td>24"</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div style="background: var(--section-bg); border-radius: 12px; padding: 14px 18px; font-size: 13px; color: rgba(64,62,62,0.75); display: flex; align-items: center; gap: 8px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e07a5f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+          <div><strong>Need personal sizing advice?</strong> Our parent concierge team is happy to help at <a href="contact.html" style="color: #3b6e51; font-weight: 700;">hello@kidokids.com</a>.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Image Zoom Modal -->
+    <div class="image-modal" id="imageModal">
+      <div class="image-modal-content">
+        <div class="modal-header">
+          <div class="zoom-controls">
+            <button class="zoom-btn zoom-in" type="button" aria-label="Zoom in">+</button>
+            <span class="zoom-level">100%</span>
+            <button class="zoom-btn zoom-out" type="button" aria-label="Zoom out">&minus;</button>
+          </div>
+          <button class="modal-close-btn" type="button" aria-label="Close modal">&times;</button>
+        </div>
+        <div class="modal-image-wrapper">
+          <img src="images/product-1.jpg" alt="Product Zoomed" class="modal-image" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <!-- Newsletter Card -->
+        <div class="footer-newsletter-wrap">
+          <div class="footer-newsletter-card">
+            <div class="newsletter-intro">
+              <span class="newsletter-badge">The Kido Club</span>
+              <h3>Join the Kido Club & Get 10% Off</h3>
+              <p>Subscribe for exclusive member previews, seasonal collection drops, and editorial stories.</p>
+            </div>
+            <div class="newsletter-form-col">
+              <form class="newsletter-form" id="newsletterForm">
+                <div class="newsletter-input-group">
+                  <span class="input-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                    </svg>
+                  </span>
+                  <input type="email" class="newsletter-input" placeholder="Enter your email address..." required />
+                  <button type="submit" class="newsletter-submit-btn">
+                    <span>Subscribe</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14"></path>
+                      <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                  </button>
+                </div>
+              </form>
+              <p class="newsletter-privacy-hint">
+                <span>No spam, ever. Unsubscribe anytime with one click.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Footer Columns -->
+        <div class="row g-4 footer-main-row">
+          <!-- Col 1: Brand Info & Payment Badges -->
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="footer-col-header">
+              <a href="index.html" class="footer-brand-logo">
+                <svg preserveAspectRatio="none" data-bbox="20 20 160 160" viewBox="20 20 160 160" height="24" width="24"
+                  xmlns="http://www.w3.org/2000/svg" role="presentation" aria-hidden="true">
+                  <g>
+                    <path
+                      d="M100.002 139.589h-.004L100 140c0 22.091-17.909 40-40 40s-40-17.909-40-40c0-21.953 17.685-39.776 39.586-39.998v-.003C37.685 99.776 20 81.954 20 60c0-22.092 17.909-40 40-40 21.4 0 38.875 16.805 39.948 37.938h.105C101.125 36.805 118.6 20 140 20c22.091 0 40 17.909 40 40 0 21.954-17.687 39.778-39.589 39.998v.003C162.313 100.222 180 118.045 180 140c0 22.091-17.909 40-40 40s-40-17.909-40-40l.002-.411z"
+                      fill="#000" clip-rule="evenodd" fill-rule="evenodd"></path>
+                  </g>
+                </svg>
+                <span>Kido Kids</span>
+              </a>
+            </div>
+            <p class="footer-brand-bio">
+              Comfortable, joyful, and sustainable fashion designed with love for the wonder years. Certified organic & safe for all little adventures.
+            </p>
+            <div class="payment-badges-row">
+              <span class="payment-badge">VISA</span>
+              <span class="payment-badge">MASTERCARD</span>
+              <span class="payment-badge">AMEX</span>
+              <span class="payment-badge">APPLE PAY</span>
+              <span class="payment-badge">PAYPAL</span>
+            </div>
+          </div>
+
+          <!-- Col 2: Quick Navigation -->
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="footer-col-header">
+              <h4 class="footer-col-title">Quick Navigation</h4>
+            </div>
+            <ul class="footer-links-list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="shop.html">Shop All Products</a></li>
+              <li><a href="about.html">Our Story</a></li>
+              <li><a href="contact.html">Get in Touch</a></li>
+              <li><a href="wishlist.html">My Saved Wishlist</a></li>
+              <li><a href="cart.html">Shopping Bag</a></li>
+              <li><a href="login.html">Customer Account</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Get in Touch -->
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="footer-col-header">
+              <h4 class="footer-col-title">Get in Touch</h4>
+            </div>
+            <div class="footer-contact-list">
+              <div class="footer-contact-item">
+                <div class="contact-icon-pill" aria-hidden="true">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </div>
+                <div class="contact-details">
+                  <a href="tel:1234567890">123-456-7890</a>
+                  <small>Mon – Fri, 9am – 6pm EST</small>
+                </div>
+              </div>
+
+              <div class="footer-contact-item">
+                <div class="contact-icon-pill" aria-hidden="true">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                  </svg>
+                </div>
+                <div class="contact-details">
+                  <a href="mailto:hello@kidokids.com">hello@kidokids.com</a>
+                  <small>24/7 dedicated support</small>
+                </div>
+              </div>
+
+              <div class="footer-contact-item">
+                <div class="contact-icon-pill" aria-hidden="true">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div class="contact-details">
+                  <span>500 Terry Francine St.</span>
+                  <small>San Francisco, CA 94158</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="footer-social-section">
+              <span class="footer-social-label">Follow Our Adventures</span>
+              <ul class="footer-social-icons">
+                <li>
+                  <a href="#" class="footer-social-btn" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24">
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"></rect>
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="none" stroke="currentColor" stroke-width="2"></path>
+                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="footer-social-btn" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="currentColor"></path>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="footer-social-btn" aria-label="Twitter">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" fill="currentColor"></path>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="footer-social-btn" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" fill="currentColor"></path>
+                      <circle cx="4" cy="4" r="2" fill="currentColor"></circle>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="footer-social-btn" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" fill="none" stroke="currentColor" stroke-width="2"></path>
+                      <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"></polygon>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="footer-social-btn" aria-label="TikTok">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Col 4: Customer Care -->
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="footer-col-header">
+              <h4 class="footer-col-title">Customer Care</h4>
+            </div>
+            <ul class="footer-links-list">
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Accessibility Statement</a></li>
+              <li><a href="#">Shipping Policy</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Refund & Exchange Policy</a></li>
+            </ul>
+          </div>
+
+          <!-- Bottom Copyright -->
+          <div class="col-12">
+            <div class="footer-bottom-bar">
+              <p>© 2026 Kido Kids Inc. All rights reserved.</p>
+              <p>
+                Developed by
+                <a target="_blank" rel="noopener noreferrer" href="https://www.weoryx.com/">WeOryx</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Quick View Interactive Modal -->
+    <div class="quick-view-modal" id="quickViewModal" role="dialog" aria-modal="true" aria-label="Product Quick View">
+      <div class="quick-view-dialog">
+        <button class="modal-close-icon" type="button" aria-label="Close Quick View">&times;</button>
+        <div class="modal-grid">
+          <div class="modal-img-col">
+            <img src="images/product-1.jpg" alt="Product Preview" />
+          </div>
+          <div class="modal-info-col">
+            <div class="modal-preview-badge">
+              <span class="badge-dot"></span> Quick Preview Mode
+            </div>
+            <span class="modal-product-category">Category</span>
+            <h3 class="modal-product-title">Product Name</h3>
+            <div class="modal-product-price">$0.00</div>
+            <div class="card-rating mb-2">★★★★★ <span class="rating-count">(4.9 from parents)</span></div>
+            <p class="modal-product-desc">Soft, comfortable, and breathable children's garment crafted from organic cotton.</p>
+
+            <div class="size-select-group">
+              <span class="size-select-label">Select Age / Size:</span>
+              <div class="size-chips">
+                <button type="button" class="size-chip active">2Y</button>
+                <button type="button" class="size-chip">4Y</button>
+                <button type="button" class="size-chip">6Y</button>
+                <button type="button" class="size-chip">8Y</button>
+              </div>
+            </div>
+
+            <div class="modal-action-row">
+              <div class="modal-qty-control">
+                <button type="button" class="qty-btn qty-minus">-</button>
+                <span class="qty-number">1</span>
+                <button type="button" class="qty-btn qty-plus">+</button>
+              </div>
+              <button type="button" class="modal-add-cart-btn">Add to Bag</button>
+            </div>
+
+            <div class="modal-footer-link-wrap">
+              <a href="product-details.html?id=1" class="modal-view-full-details" id="modalViewFullDetails">
+                <span>View Full Product Details &amp; Reviews</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container-custom"></div>
+
+    <!-- Scripts -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/product-details.js"></script>
+  </body>
+</html>

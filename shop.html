@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop All Products | Kido Kids</title>
+    <meta
+      name="description"
+      content="Browse all children's clothing collections at Kido Kids. High-quality party wear, school wear, and eco-friendly outfits."
+    />
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+    <link rel="apple-touch-icon" href="images/favicon.svg" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/home-enhancements.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <nav class="navbar navbar-expand-lg">
+          <a class="navbar-brand" href="index.html">
+            <svg
+              preserveAspectRatio="none"
+              data-bbox="20 20 160 160"
+              viewBox="20 20 160 160"
+              height="22"
+              width="22"
+              xmlns="http://www.w3.org/2000/svg"
+              data-type="color"
+              role="presentation"
+              aria-hidden="true"
+            >
+              <g>
+                <path
+                  d="M100.002 139.589h-.004L100 140c0 22.091-17.909 40-40 40s-40-17.909-40-40c0-21.953 17.685-39.776 39.586-39.998v-.003C37.685 99.776 20 81.954 20 60c0-22.092 17.909-40 40-40 21.4 0 38.875 16.805 39.948 37.938h.105C101.125 36.805 118.6 20 140 20c22.091 0 40 17.909 40 40 0 21.954-17.687 39.778-39.589 39.998v.003C162.313 100.222 180 118.045 180 140c0 22.091-17.909 40-40 40s-40-17.909-40-40l.002-.411z"
+                  fill="#000"
+                  clip-rule="evenodd"
+                  fill-rule="evenodd"
+                ></path>
+              </g>
+            </svg>
+            <span>Kido Kids</span>
+          </a>
+          <!-- Mobile Offcanvas Toggler -->
+          <button
+            class="navbar-toggler kido-navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#menu"
+            aria-controls="menu"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Offcanvas Side Drawer (Mobile) & Horizontal Navbar (Desktop) -->
+          <div class="offcanvas offcanvas-end kido-offcanvas" tabindex="-1" id="menu" aria-labelledby="menuLabel">
+            <div class="offcanvas-header d-lg-none">
+              <a class="navbar-brand m-0" href="index.html">
+                <svg
+                  preserveAspectRatio="none"
+                  data-bbox="20 20 160 160"
+                  viewBox="20 20 160 160"
+                  height="22"
+                  width="22"
+                  xmlns="http://www.w3.org/2000/svg"
+                  data-type="color"
+                  role="presentation"
+                  aria-hidden="true"
+                >
+                  <g>
+                    <path
+                      d="M100.002 139.589h-.004L100 140c0 22.091-17.909 40-40 40s-40-17.909-40-40c0-21.953 17.685-39.776 39.586-39.998v-.003C37.685 99.776 20 81.954 20 60c0-22.092 17.909-40 40-40 21.4 0 38.875 16.805 39.948 37.938h.105C101.125 36.805 118.6 20 140 20c22.091 0 40 17.909 40 40 0 21.954-17.687 39.778-39.589 39.998v.003C162.313 100.222 180 118.045 180 140c0 22.091-17.909 40-40 40s-40-17.909-40-40l.002-.411z"
+                      fill="#000"
+                      clip-rule="evenodd"
+                      fill-rule="evenodd"
+                    ></path>
+                  </g>
+                </svg>
+                <span id="menuLabel">Kido Kids</span>
+              </a>
+              <button
+                type="button"
+                class="kido-drawer-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+
+            <div class="offcanvas-body">
+              <!-- Customer Welcome / Profile Badge (mobile only) -->
+              <div class="drawer-user-card d-lg-none">
+                <div class="user-card-avatar">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <div class="user-card-info">
+                  <strong class="user-card-name drawer-user-name">Welcome to Kido!</strong>
+                  <a href="login.html" class="user-card-link">Sign In / Join Family ›</a>
+                </div>
+              </div>
+
+
+              <div class="center-menu">
+                <ul class="nav-menu navbar-nav">
+                  <li>
+                    <a href="index.html">
+                      <span>Home</span>
+                      <svg class="nav-chevron d-lg-none" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </a>
+                  </li>
+                  <li class="active">
+                    <a href="shop.html">
+                      <span>Shop All</span>
+                      <svg class="nav-chevron d-lg-none" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="about.html">
+                      <span>About Us</span>
+                      <svg class="nav-chevron d-lg-none" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="contact.html">
+                      <span>Contact Us</span>
+                      <svg class="nav-chevron d-lg-none" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="links header-actions">
+                <!-- Wishlist quick link -->
+                <a href="wishlist.html" class="header-action-btn wishlist-header-btn" title="Saved Favorites" aria-label="Wishlist">
+                  <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                  </svg>
+                  <span class="drawer-action-text d-lg-none">Wishlist</span>
+                  <span class="wishlist-count-badge">4</span>
+                </a>
+                
+                <!-- Log in button -->
+                <a href="login.html" class="header-login-btn">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                  <span>Log in</span>
+                </a>
+
+                <!-- Cart Button with Count Badge -->
+                <a href="cart.html" class="custom-btn cart-btn-wrapper" aria-label="Cart">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    version="1.1"
+                    width="45px"
+                    height="20px"
+                    viewBox="0 0 329.7 134.5"
+                    data-hook="svg-icon-6"
+                  >
+                    <path
+                      class="ptVJi9"
+                      d="M281.6 3c35.7 10.7 56 47.6 45.2 83.3s-47.6 56-83.3 45.2c-35.7-10.7-56-47.6-45.2-83.3C209 13.1 245.9-7.2 281.6 3z"
+                    ></path>
+                    <text
+                      x="265"
+                      y="69"
+                      dy=".35em"
+                      text-anchor="middle"
+                      class="uxskpx"
+                      data-hook="items-count"
+                    >
+                      0
+                    </text>
+                    <path
+                      d="M74.1 134.4c-8.7 0-16.2-7.4-16.2-16.2S65.3 102 74.1 102s16.2 7.4 16.2 16.2-7.4 16.2-16.2 16.2zm0-21.7c-3.1 0-5.6 2.5-5.6 5.6s2.5 5.6 5.6 5.6 5.6-2.5 5.6-5.6-2.5-5.6-5.6-5.6zM120.5 134.5c-8.7 0-16.2-7.4-16.2-16.2s7.4-16.2 16.2-16.2 16.2 7.4 16.2 16.2-7.4 16.2-16.2 16.2zm0-21.7c-3.1 0-5.6 2.5-5.6 5.6s2.5 5.6 5.6 5.6c3.1 0 5.6-2.5 5.6-5.6s-2.5-5.6-5.6-5.6z"
+                    ></path>
+                    <path
+                      d="M141.2 92.1L53.5 92.1 23 10.6 0 10.6 0 0 30.4 0 61.2 81.6 133.5 81.6 152.4 30.4 38.5 30.4 34.8 19.9 167.9 19.9z"
+                    ></path>
+                  </svg>
+                  <span class="drawer-action-text d-lg-none">My Bag</span>
+                </a>
+              </div>
+
+              <!-- Eco Brand Guarantee (mobile only) -->
+              <div class="drawer-eco-banner d-lg-none">
+                <svg class="eco-banner-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#3b6e51" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
+                  <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+                </svg>
+                <span>100% GOTS Organic Cotton • Happiness Guarantee</span>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="shop">
+      <!-- Breadcrumb Bar -->
+      <section class="shop-breadcrumb-section" id="breadcrumb">
+        <div class="container">
+          <nav class="shop-breadcrumb-nav" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="index.html">Home</a></li>
+              <li class="sep">/</li>
+              <li class="current" aria-current="page">All Products</li>
+            </ol>
+          </nav>
+        </div>
+      </section>
+
+      <div class="container">
+        <div class="row shop-layout-row">
+          <!-- Sidebar -->
+          <aside class="sidebar col-lg-3 col-md-4 col-sm-12">
+            <div class="browse">
+              <h2>Browse By</h2>
+              <ul>
+                <li><a href="#" class="active" style="font-weight: bold;">All Products</a></li>
+                <li><a href="#">Eco Friendly</a></li>
+                <li><a href="#">Party Wear</a></li>
+                <li><a href="#">School Wear</a></li>
+              </ul>
+            </div>
+            <div class="filters">
+              <h2>Filter by</h2>
+              <div class="price collapse-div">
+                <input
+                  type="checkbox"
+                  class="toggle-category-checkbox"
+                  id="toggle-category-price"
+                  hidden
+                  checked
+                />
+                <h5>
+                  Price
+                  <label
+                    for="toggle-category-price"
+                    class="collapse-btn"
+                  ></label>
+                </h5>
+                <div class="collapse-content">
+                  <div class="price-filter">
+                    <div class="price-values">
+                      <span>$0</span>
+                      <span>$100</span>
+                    </div>
+
+                    <div class="slider">
+                      <div
+                        class="slider-track"
+                        style="left: 0%; width: 100%"
+                      ></div>
+
+                      <input
+                        type="range"
+                        min="0"
+                        max="100"
+                        value="0"
+                        class="thumb thumb-left"
+                      />
+
+                      <input
+                        type="range"
+                        min="0"
+                        max="100"
+                        value="100"
+                        class="thumb thumb-right"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="color collapse-div">
+                <input
+                  type="checkbox"
+                  class="toggle-category-checkbox"
+                  id="toggle-category-5"
+                  hidden
+                  checked
+                />
+                <h5>
+                  Color
+                  <label for="toggle-category-5" class="collapse-btn"></label>
+                </h5>
+                <div class="collapse-content">
+                  <ul class="check-list">
+                    <li>
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckChecked1"
+                        checked
+                      />
+                      <label for="flexCheckChecked1">
+                        <span>Pink</span>
+                      </label>
+                    </li>
+                    <li>
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckChecked2"
+                        checked
+                      />
+                      <label for="flexCheckChecked2">
+                        <span>Blue</span>
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+          <!-- Products Area -->
+          <div class="col-lg-9 col-md-8 col-sm-12 shop-content-col">
+            <div class="applied-filters"></div>
+            <div class="shop-header">
+              <div class="products-count">
+                <p>6 Products</p>
+              </div>
+              <div class="sort-dropdown custom-select-wrapper">
+                <label for="shopSortSelect" class="visually-hidden">Sort products by</label>
+                <select id="shopSortSelect" class="visually-hidden" tabindex="-1" aria-hidden="true">
+                  <option value="recommended" selected>Recommended</option>
+                  <option value="newest">Newest</option>
+                  <option value="price-asc">Price: Low to High</option>
+                  <option value="price-desc">Price: High to Low</option>
+                  <option value="name-asc">Name: A-Z</option>
+                  <option value="name-desc">Name: Z-A</option>
+                </select>
+
+                <div class="custom-select" id="customSortDropdown">
+                  <button
+                    type="button"
+                    class="custom-select-trigger"
+                    aria-haspopup="listbox"
+                    aria-expanded="false"
+                    id="sortDropdownBtn"
+                  >
+                    <span class="custom-select-label">Recommended</span>
+                    <span class="custom-select-arrow" aria-hidden="true">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m6 9 6 6 6-6"/>
+                      </svg>
+                    </span>
+                  </button>
+
+                  <ul class="custom-select-menu" role="listbox" aria-labelledby="sortDropdownBtn" tabindex="-1">
+                    <li class="custom-select-option is-selected" role="option" aria-selected="true" data-value="recommended">
+                      <span>Recommended</span>
+                      <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="20 6 9 17 4 12"/>
+                      </svg>
+                    </li>
+                    <li class="custom-select-option" role="option" aria-selected="false" data-value="newest">
+                      <span>Newest</span>
+                      <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="20 6 9 17 4 12"/>
+                      </svg>
+                    </li>
+                    <li class="custom-select-option" role="option" aria-selected="false" data-value="price-asc">
+                      <span>Price: Low to High</span>
+                      <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="20 6 9 17 4 12"/>
+                      </svg>
+                    </li>
+                    <li class="custom-select-option" role="option" aria-selected="false" data-value="price-desc">
+                      <span>Price: High to Low</span>
+                      <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="20 6 9 17 4 12"/>
+                      </svg>
+                    </li>
+                    <li class="custom-select-option" role="option" aria-selected="false" data-value="name-asc">
+                      <span>Name: A-Z</span>
+                      <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="20 6 9 17 4 12"/>
+                      </svg>
+                    </li>
+                    <li class="custom-select-option" role="option" aria-selected="false" data-value="name-desc">
+                      <span>Name: Z-A</span>
+                      <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <polyline points="20 6 9 17 4 12"/>
+                      </svg>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="row g-4" id="products">
+              <!-- Dynamically rendered by js/shop.js -->
+            </div>
+
+            <!-- Professional Shop Pagination -->
+            <div class="shop-pagination-wrapper" id="shopPaginationWrapper">
+              <div class="shop-pagination-info">
+                Showing <strong id="paginationRangeText">1–6</strong> of <strong id="paginationTotalText">18</strong> products
+              </div>
+
+              <nav class="shop-pagination" aria-label="Catalog pagination">
+                <button class="shop-page-btn prev-btn" id="prevPageBtn" type="button" aria-label="Previous page" disabled>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                  </svg>
+                  <span>Prev</span>
+                </button>
+
+                <div class="shop-page-numbers" id="shopPageNumbers">
+                  <!-- Injected dynamically by js/shop.js -->
+                </div>
+
+                <button class="shop-page-btn next-btn" id="nextPageBtn" type="button" aria-label="Next page">
+                  <span>Next</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </button>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <!-- Newsletter Card -->
+        <div class="footer-newsletter-wrap">
+          <div class="footer-newsletter-card">
+            <div class="newsletter-intro">
+              <span class="newsletter-badge">The Kido Club</span>
+              <h3>Join the Kido Club & Get 10% Off</h3>
+              <p>Subscribe for exclusive member previews, seasonal collection drops, and editorial stories.</p>
+            </div>
+            <div class="newsletter-form-col">
+              <form class="newsletter-form" id="newsletterForm">
+                <div class="newsletter-input-group">
+                  <span class="input-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                    </svg>
+                  </span>
+                  <input type="email" class="newsletter-input" placeholder="Enter your email address..." required />
+                  <button type="submit" class="newsletter-submit-btn">
+                    <span>Subscribe</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 12h14"></path>
+                      <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                  </button>
+                </div>
+              </form>
+              <p class="newsletter-privacy-hint">
+                <span>No spam, ever. Unsubscribe anytime with one click.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Footer Columns -->
+        <div class="row g-4 footer-main-row">
+          <!-- Col 1: Brand Info & Payment Badges -->
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="footer-col-header">
+              <a href="index.html" class="footer-brand-logo">
+                <svg preserveAspectRatio="none" data-bbox="20 20 160 160" viewBox="20 20 160 160" height="24" width="24"
+                  xmlns="http://www.w3.org/2000/svg" role="presentation" aria-hidden="true">
+                  <g>
+                    <path
+                      d="M100.002 139.589h-.004L100 140c0 22.091-17.909 40-40 40s-40-17.909-40-40c0-21.953 17.685-39.776 39.586-39.998v-.003C37.685 99.776 20 81.954 20 60c0-22.092 17.909-40 40-40 21.4 0 38.875 16.805 39.948 37.938h.105C101.125 36.805 118.6 20 140 20c22.091 0 40 17.909 40 40 0 21.954-17.687 39.778-39.589 39.998v.003C162.313 100.222 180 118.045 180 140c0 22.091-17.909 40-40 40s-40-17.909-40-40l.002-.411z"
+                      fill="#000" clip-rule="evenodd" fill-rule="evenodd"></path>
+                  </g>
+                </svg>
+                <span>Kido Kids</span>
+              </a>
+            </div>
+            <p class="footer-brand-bio">
+              Comfortable, joyful, and sustainable fashion designed with love for the wonder years. Certified organic & safe for all little adventures.
+            </p>
+            <div class="payment-badges-row">
+              <span class="payment-badge">VISA</span>
+              <span class="payment-badge">MASTERCARD</span>
+              <span class="payment-badge">AMEX</span>
+              <span class="payment-badge">APPLE PAY</span>
+              <span class="payment-badge">PAYPAL</span>
+            </div>
+          </div>
+
+          <!-- Col 2: Quick Navigation -->
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="footer-col-header">
+              <h4 class="footer-col-title">Quick Navigation</h4>
+            </div>
+            <ul class="footer-links-list">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="shop.html">Shop All Products</a></li>
+              <li><a href="about.html">Our Story</a></li>
+              <li><a href="contact.html">Get in Touch</a></li>
+              <li><a href="wishlist.html">My Saved Wishlist</a></li>
+              <li><a href="cart.html">Shopping Bag</a></li>
+              <li><a href="login.html">Customer Account</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Get in Touch -->
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="footer-col-header">
+              <h4 class="footer-col-title">Get in Touch</h4>
+            </div>
+            <div class="footer-contact-list">
+              <div class="footer-contact-item">
+                <div class="contact-icon-pill" aria-hidden="true">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </div>
+                <div class="contact-details">
+                  <a href="tel:1234567890">123-456-7890</a>
+                  <small>Mon – Fri, 9am – 6pm EST</small>
+                </div>
+              </div>
+
+              <div class="footer-contact-item">
+                <div class="contact-icon-pill" aria-hidden="true">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                  </svg>
+                </div>
+                <div class="contact-details">
+                  <a href="mailto:hello@kidokids.com">hello@kidokids.com</a>
+                  <small>24/7 dedicated support</small>
+                </div>
+              </div>
+
+              <div class="footer-contact-item">
+                <div class="contact-icon-pill" aria-hidden="true">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div class="contact-details">
+                  <span>500 Terry Francine St.</span>
+                  <small>San Francisco, CA 94158</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="footer-social-section">
+              <span class="footer-social-label">Follow Our Adventures</span>
+              <ul class="footer-social-icons">
+                <li>
+                  <a href="#" class="footer-social-btn" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24">
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"></rect>
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="none" stroke="currentColor" stroke-width="2"></path>
+                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="footer-social-btn" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="currentColor"></path>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="footer-social-btn" aria-label="Twitter">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" fill="currentColor"></path>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="footer-social-btn" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" fill="currentColor"></path>
+                      <circle cx="4" cy="4" r="2" fill="currentColor"></circle>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="footer-social-btn" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" fill="none" stroke="currentColor" stroke-width="2"></path>
+                      <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"></polygon>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="footer-social-btn" aria-label="TikTok">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Col 4: Customer Care -->
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="footer-col-header">
+              <h4 class="footer-col-title">Customer Care</h4>
+            </div>
+            <ul class="footer-links-list">
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Accessibility Statement</a></li>
+              <li><a href="#">Shipping Policy</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Refund & Exchange Policy</a></li>
+            </ul>
+          </div>
+
+          <!-- Bottom Copyright -->
+          <div class="col-12">
+            <div class="footer-bottom-bar">
+              <p>© 2026 Kido Kids Inc. All rights reserved.</p>
+              <p>
+                Developed by
+                <a target="_blank" rel="noopener noreferrer" href="https://www.weoryx.com/">WeOryx</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/products-data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/shop.js"></script>
+  </body>
+</html>

@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Login & Account | Kido Kids</title>
+  <meta name="description"
+    content="Sign in or create your Kido Kids account to track orders, save your wishlist favorites, and unlock exclusive family rewards." />
+
+  <!-- Favicon & Fonts & Stylesheets -->
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+  <link rel="apple-touch-icon" href="images/favicon.svg" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/owl.carousel.min.css" />
+  <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+  <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/fonts.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/home-enhancements.css" />
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="index.html">
+          <svg preserveAspectRatio="none" data-bbox="20 20 160 160" viewBox="20 20 160 160" height="22" width="22"
+            xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true">
+            <g>
+              <path
+                d="M100.002 139.589h-.004L100 140c0 22.091-17.909 40-40 40s-40-17.909-40-40c0-21.953 17.685-39.776 39.586-39.998v-.003C37.685 99.776 20 81.954 20 60c0-22.092 17.909-40 40-40 21.4 0 38.875 16.805 39.948 37.938h.105C101.125 36.805 118.6 20 140 20c22.091 0 40 17.909 40 40 0 21.954-17.687 39.778-39.589 39.998v.003C162.313 100.222 180 118.045 180 140c0 22.091-17.909 40-40 40s-40-17.909-40-40l.002-.411z"
+                fill="#000" clip-rule="evenodd" fill-rule="evenodd"></path>
+            </g>
+          </svg>
+          <span>Kido Kids</span>
+        </a>
+        <!-- Mobile Offcanvas Toggler -->
+        <button
+          class="navbar-toggler kido-navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#menu"
+          aria-controls="menu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Offcanvas Side Drawer (Mobile) & Horizontal Navbar (Desktop) -->
+        <div class="offcanvas offcanvas-end kido-offcanvas" tabindex="-1" id="menu" aria-labelledby="menuLabel">
+          <div class="offcanvas-header d-lg-none">
+            <a class="navbar-brand m-0" href="index.html">
+              <svg
+                preserveAspectRatio="none"
+                data-bbox="20 20 160 160"
+                viewBox="20 20 160 160"
+                height="22"
+                width="22"
+                xmlns="http://www.w3.org/2000/svg"
+                data-type="color"
+                role="presentation"
+                aria-hidden="true"
+              >
+                <g>
+                  <path
+                    d="M100.002 139.589h-.004L100 140c0 22.091-17.909 40-40 40s-40-17.909-40-40c0-21.953 17.685-39.776 39.586-39.998v-.003C37.685 99.776 20 81.954 20 60c0-22.092 17.909-40 40-40 21.4 0 38.875 16.805 39.948 37.938h.105C101.125 36.805 118.6 20 140 20c22.091 0 40 17.909 40 40 0 21.954-17.687 39.778-39.589 39.998v.003C162.313 100.222 180 118.045 180 140c0 22.091-17.909 40-40 40s-40-17.909-40-40l.002-.411z"
+                    fill="#000"
+                    clip-rule="evenodd"
+                    fill-rule="evenodd"
+                  ></path>
+                </g>
+              </svg>
+              <span id="menuLabel">Kido Kids</span>
+            </a>
+            <button
+              type="button"
+              class="kido-drawer-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+
+          <div class="offcanvas-body">
+            <!-- Customer Welcome / Profile Badge (mobile only) -->
+            <div class="drawer-user-card d-lg-none">
+              <div class="user-card-avatar">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </div>
+              <div class="user-card-info">
+                <strong class="user-card-name drawer-user-name">Welcome to Kido!</strong>
+                <a href="login.html" class="user-card-link">Sign In / Join Family ›</a>
+              </div>
+            </div>
+
+
+            <div class="center-menu">
+              <ul class="nav-menu navbar-nav">
+                <li>
+                  <a href="index.html">
+                    <span>Home</span>
+                    <svg class="nav-chevron d-lg-none" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="shop.html">
+                    <span>Shop All</span>
+                    <svg class="nav-chevron d-lg-none" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="about.html">
+                    <span>About Us</span>
+                    <svg class="nav-chevron d-lg-none" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="contact.html">
+                    <span>Contact Us</span>
+                    <svg class="nav-chevron d-lg-none" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="links header-actions">
+              <!-- Wishlist quick link -->
+              <a href="wishlist.html" class="header-action-btn wishlist-header-btn" title="Saved Favorites" aria-label="Wishlist">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+                <span class="drawer-action-text d-lg-none">Wishlist</span>
+                <span class="wishlist-count-badge">4</span>
+              </a>
+              
+              <!-- Log in button -->
+              <a href="login.html" class="header-login-btn active" aria-current="page">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <span>Log in</span>
+              </a>
+
+              <!-- Cart Button with Count Badge -->
+              <a href="cart.html" class="custom-btn cart-btn-wrapper" aria-label="Cart">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="45px" height="20px" viewBox="0 0 329.7 134.5"
+                  data-hook="svg-icon-6">
+                  <path class="ptVJi9"
+                    d="M281.6 3c35.7 10.7 56 47.6 45.2 83.3s-47.6 56-83.3 45.2c-35.7-10.7-56-47.6-45.2-83.3C209 13.1 245.9-7.2 281.6 3z">
+                  </path>
+                  <text x="265" y="69" dy=".35em" text-anchor="middle" class="uxskpx" data-hook="items-count">
+                    0
+                  </text>
+                  <path
+                    d="M74.1 134.4c-8.7 0-16.2-7.4-16.2-16.2S65.3 102 74.1 102s16.2 7.4 16.2 16.2-7.4 16.2-16.2 16.2zm0-21.7c-3.1 0-5.6 2.5-5.6 5.6s2.5 5.6 5.6 5.6 5.6-2.5 5.6-5.6-2.5-5.6-5.6-5.6zM120.5 134.5c-8.7 0-16.2-7.4-16.2-16.2s7.4-16.2 16.2-16.2 16.2 7.4 16.2 16.2-7.4 16.2-16.2 16.2zm0-21.7c-3.1 0-5.6 2.5-5.6 5.6s2.5 5.6 5.6 5.6c3.1 0 5.6-2.5 5.6-5.6s-2.5-5.6-5.6-5.6z">
+                  </path>
+                  <path
+                    d="M141.2 92.1L53.5 92.1 23 10.6 0 10.6 0 0 30.4 0 61.2 81.6 133.5 81.6 152.4 30.4 38.5 30.4 34.8 19.9 167.9 19.9z">
+                  </path>
+                </svg>
+                <span class="drawer-action-text d-lg-none">My Bag</span>
+              </a>
+            </div>
+
+            <!-- Eco Brand Guarantee (mobile only) -->
+            <div class="drawer-eco-banner d-lg-none">
+              <svg class="eco-banner-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#3b6e51" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
+                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+              </svg>
+              <span>100% GOTS Organic Cotton • Happiness Guarantee</span>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main>
+    <section id="login-page">
+      <div class="container">
+        <!-- Breadcrumb -->
+        <nav class="cart-breadcrumb" aria-label="breadcrumb">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <span>My Account</span>
+        </nav>
+
+        <div class="login-container-box">
+          <!-- Auth Grid (Shown when not logged in) -->
+          <div class="login-grid-wrapper" id="loginAuthGrid">
+            <!-- Left: Authentication Form Card -->
+            <div class="login-auth-card">
+              <div class="auth-header-block">
+                <span class="auth-brand-badge">Kido Member Account</span>
+                <h1 id="authTitle">Welcome Back</h1>
+                <p id="authSubtitle">Log in to track orders, manage your wishlist, and unlock exclusive family perks.</p>
+              </div>
+
+              <!-- Segmented Tabs Switcher -->
+              <div class="auth-segmented-tabs">
+                <button type="button" class="auth-tab-btn active" id="tabSignIn">Sign In</button>
+                <button type="button" class="auth-tab-btn" id="tabRegister">Create Account</button>
+              </div>
+
+              <!-- Social Auth Buttons -->
+              <div class="social-auth-grid">
+                <button type="button" class="social-auth-btn" data-provider="Google">
+                  <svg width="18" height="18" viewBox="0 0 24 24">
+                    <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
+                    <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
+                    <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 10.04 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+                    <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+                  </svg>
+                  <span>Google</span>
+                </button>
+                <button type="button" class="social-auth-btn" data-provider="Apple">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.63-.77 1.06-1.85.95-2.92-.93.04-2.04.62-2.7 1.39-.58.67-1.09 1.76-.95 2.81 1.03.08 2.08-.51 2.7-1.28z"/>
+                  </svg>
+                  <span>Apple</span>
+                </button>
+              </div>
+
+              <div class="auth-divider-line">
+                <span>or with email</span>
+              </div>
+
+              <!-- 1. Sign In Form -->
+              <form id="signInForm" class="auth-form-content">
+                <div class="kido-form-group">
+                  <label for="loginEmail">Email Address</label>
+                  <div class="kido-input-wrapper">
+                    <span class="kido-input-icon">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                      </svg>
+                    </span>
+                    <input type="email" id="loginEmail" class="kido-auth-input" placeholder="parent@example.com" required />
+                  </div>
+                </div>
+
+                <div class="kido-form-group">
+                  <label for="loginPassword">Password</label>
+                  <div class="kido-input-wrapper">
+                    <span class="kido-input-icon">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                      </svg>
+                    </span>
+                    <input type="password" id="loginPassword" class="kido-auth-input has-toggle" placeholder="••••••••" required />
+                    <button type="button" class="password-visibility-btn" aria-label="Toggle password visibility">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="auth-options-row">
+                  <label class="kido-checkbox-label">
+                    <input type="checkbox" id="rememberMe" checked />
+                    <span>Remember me</span>
+                  </label>
+                  <a href="#" class="forgot-password-link" id="forgotPasswordLink">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="auth-primary-btn">
+                  <span>Sign In to Kido Kids</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </button>
+
+                <div class="auth-footer-prompt">
+                  Don't have an account yet? <a data-switch-tab="register">Create one now</a>
+                </div>
+              </form>
+
+              <!-- 2. Create Account Form (Initially Hidden) -->
+              <form id="registerForm" class="auth-form-content" style="display: none;">
+                <div class="kido-form-group">
+                  <label for="regName">Your Full Name</label>
+                  <div class="kido-input-wrapper">
+                    <span class="kido-input-icon">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                      </svg>
+                    </span>
+                    <input type="text" id="regName" class="kido-auth-input" placeholder="Emma Watson" required />
+                  </div>
+                </div>
+
+                <div class="kido-form-group">
+                  <label for="regEmail">Email Address</label>
+                  <div class="kido-input-wrapper">
+                    <span class="kido-input-icon">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                      </svg>
+                    </span>
+                    <input type="email" id="regEmail" class="kido-auth-input" placeholder="emma@example.com" required />
+                  </div>
+                </div>
+
+                <div class="kido-form-group">
+                  <label for="regPassword">Create Password</label>
+                  <div class="kido-input-wrapper">
+                    <span class="kido-input-icon">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                      </svg>
+                    </span>
+                    <input type="password" id="regPassword" class="kido-auth-input has-toggle" placeholder="At least 6 characters" required />
+                    <button type="button" class="password-visibility-btn" aria-label="Toggle password visibility">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                      </svg>
+                    </button>
+                  </div>
+                  <!-- Password Strength Meter -->
+                  <div class="password-strength-container">
+                    <div class="password-strength-bar">
+                      <div class="password-strength-fill" id="strengthFill"></div>
+                    </div>
+                    <span class="password-strength-text" id="strengthText">Minimum 6 characters</span>
+                  </div>
+                </div>
+
+                <div class="kido-form-group">
+                  <label for="regChildAge">Child's Age or Birthday (Optional — for birthday treats)</label>
+                  <div class="kido-input-wrapper">
+                    <span class="kido-input-icon">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                      </svg>
+                    </span>
+                    <input type="text" id="regChildAge" class="kido-auth-input" placeholder="e.g. 4 Years Old / Oct 2022" />
+                  </div>
+                </div>
+
+                <div class="auth-options-row">
+                  <label class="kido-checkbox-label">
+                    <input type="checkbox" id="regTerms" required checked />
+                    <span>I agree to Kido Kids <a href="#" class="forgot-password-link">Terms</a> & <a href="#" class="forgot-password-link">Privacy Policy</a></span>
+                  </label>
+                </div>
+
+                <button type="submit" class="auth-primary-btn">
+                  <span>Join the Kido Club (10% Off)</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                  </svg>
+                </button>
+
+                <div class="auth-footer-prompt">
+                  Already have an account? <a data-switch-tab="signin">Sign in here</a>
+                </div>
+              </form>
+            </div>
+
+            <!-- Right: Why Join Kido Club Perks Panel -->
+            <div class="login-perks-card">
+              <div>
+                <div class="perks-header">
+                  <h2>Member Privileges</h2>
+                  <p>More than just an account — it's your child's joyful, organic wardrobe hub.</p>
+                </div>
+
+                <div class="perks-list">
+                  <div class="perk-item">
+                    <div class="perk-icon-circle icon-lime">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 12 20 22 4 22 4 12"></polyline>
+                        <rect x="2" y="7" width="20" height="5"></rect>
+                        <line x1="12" y1="22" x2="12" y2="7"></line>
+                        <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
+                        <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+                      </svg>
+                    </div>
+                    <div class="perk-info">
+                      <h4>10% Off Your Welcome Order</h4>
+                      <p>Instant savings coupon delivered straight to your account on sign up.</p>
+                    </div>
+                  </div>
+
+                  <div class="perk-item">
+                    <div class="perk-icon-circle icon-lavender">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="1" y="3" width="15" height="13"></rect>
+                        <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                        <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                        <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                      </svg>
+                    </div>
+                    <div class="perk-info">
+                      <h4>Lightning Fast Checkout</h4>
+                      <p>Securely save shipping addresses and pre-set child sizes for instant ordering.</p>
+                    </div>
+                  </div>
+
+                  <div class="perk-item">
+                    <div class="perk-icon-circle icon-lime">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                      </svg>
+                    </div>
+                    <div class="perk-info">
+                      <h4>Synced Wishlist Everywhere</h4>
+                      <p>Keep track of saved pieces across phone, tablet, and computer seamlessly.</p>
+                    </div>
+                  </div>
+
+                  <div class="perk-item">
+                    <div class="perk-icon-circle icon-lavender">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="8" r="7"></circle>
+                        <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                      </svg>
+                    </div>
+                    <div class="perk-info">
+                      <h4>Annual Birthday Privileges</h4>
+                      <p>Enjoy curated gifts and celebratory privileges during your child's birthday month.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Real Parent Testimonial Card -->
+              <div class="parent-quote-card">
+                <div class="quote-stars">★★★★★</div>
+                <p>"Kido Kids makes dressing my kids so effortless! The organic fabrics are miraculously soft and wash like a dream."</p>
+                <div class="quote-author">— Sarah M., Mother of 2 • Verified Member</div>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- End loginAuthGrid -->
+
+          <!-- Logged-In User Profile Dashboard (Shown when user is authenticated) -->
+          <div class="logged-in-card" id="loggedInCard">
+            <div class="logged-in-header">
+              <div class="user-avatar-circle">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </div>
+              <div class="user-member-badge">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+                <span>Verified Kido Club Member</span>
+              </div>
+              <h2>Welcome Back, <span id="loggedInUserName">Parent</span>!</h2>
+              <div class="user-email" id="loggedInUserEmail">parent@example.com</div>
+            </div>
+
+            <!-- Member Perks Summary Strip -->
+            <div class="account-stats-ribbon">
+              <div class="stat-pill">
+                <span class="stat-value">150</span>
+                <span class="stat-label">Club Stars</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-pill">
+                <span class="stat-value">20% Off</span>
+                <span class="stat-label">Code: KIDOFUN20</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-pill">
+                <span class="stat-value">Free</span>
+                <span class="stat-label">Express Shipping</span>
+              </div>
+            </div>
+
+            <!-- Quick Action Links -->
+            <div class="account-quick-links-grid">
+              <a href="cart.html" class="account-quick-link-btn">
+                <div class="link-icon-wrap icon-lime">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                  </svg>
+                </div>
+                <div class="link-text-block">
+                  <span class="link-title">Shopping Bag</span>
+                  <span class="link-desc">Review your selected pieces</span>
+                </div>
+              </a>
+              <a href="wishlist.html" class="account-quick-link-btn">
+                <div class="link-icon-wrap icon-lavender">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                  </svg>
+                </div>
+                <div class="link-text-block">
+                  <span class="link-title">My Wishlist</span>
+                  <span class="link-desc">Saved favorites for your little one</span>
+                </div>
+              </a>
+              <a href="shop.html" class="account-quick-link-btn">
+                <div class="link-icon-wrap icon-lime">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                </div>
+                <div class="link-text-block">
+                  <span class="link-title">New Arrivals</span>
+                  <span class="link-desc">Explore spring/summer collection</span>
+                </div>
+              </a>
+              <a href="contact.html" class="account-quick-link-btn">
+                <div class="link-icon-wrap icon-lavender">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div class="link-text-block">
+                  <span class="link-title">Parent Support</span>
+                  <span class="link-desc">Sizing help & easy returns</span>
+                </div>
+              </a>
+            </div>
+
+            <!-- Sign Out Action -->
+            <div class="dashboard-footer-actions">
+              <button type="button" class="signout-btn" id="signOutBtn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                  <polyline points="16 17 21 12 16 7"></polyline>
+                  <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+                <span>Sign Out of Account</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <!-- Newsletter Card -->
+      <div class="footer-newsletter-wrap">
+        <div class="footer-newsletter-card">
+          <div class="newsletter-intro">
+            <span class="newsletter-badge">The Kido Club</span>
+            <h3>Join the Kido Club & Get 10% Off</h3>
+            <p>Subscribe for exclusive member previews, seasonal collection drops, and editorial stories.</p>
+          </div>
+          <div class="newsletter-form-col">
+            <form class="newsletter-form" id="newsletterForm">
+              <div class="newsletter-input-group">
+                <span class="input-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                  </svg>
+                </span>
+                <input type="email" class="newsletter-input" placeholder="Enter your email address..." required />
+                <button type="submit" class="newsletter-submit-btn">
+                  <span>Subscribe</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14"></path>
+                    <path d="m12 5 7 7-7 7"></path>
+                  </svg>
+                </button>
+              </div>
+            </form>
+            <p class="newsletter-privacy-hint">
+              <span>No spam, ever. Unsubscribe anytime with one click.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Footer Columns -->
+      <div class="row g-4 footer-main-row">
+        <!-- Col 1: Brand Info & Payment Badges -->
+        <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="footer-col-header">
+            <a href="index.html" class="footer-brand-logo">
+              <svg preserveAspectRatio="none" data-bbox="20 20 160 160" viewBox="20 20 160 160" height="24" width="24"
+                xmlns="http://www.w3.org/2000/svg" role="presentation" aria-hidden="true">
+                <g>
+                  <path
+                    d="M100.002 139.589h-.004L100 140c0 22.091-17.909 40-40 40s-40-17.909-40-40c0-21.953 17.685-39.776 39.586-39.998v-.003C37.685 99.776 20 81.954 20 60c0-22.092 17.909-40 40-40 21.4 0 38.875 16.805 39.948 37.938h.105C101.125 36.805 118.6 20 140 20c22.091 0 40 17.909 40 40 0 21.954-17.687 39.778-39.589 39.998v.003C162.313 100.222 180 118.045 180 140c0 22.091-17.909 40-40 40s-40-17.909-40-40l.002-.411z"
+                    fill="#000" clip-rule="evenodd" fill-rule="evenodd"></path>
+                </g>
+              </svg>
+              <span>Kido Kids</span>
+            </a>
+          </div>
+          <p class="footer-brand-bio">
+            Comfortable, joyful, and sustainable fashion designed with love for the wonder years. Certified organic & safe for all little adventures.
+          </p>
+          <div class="payment-badges-row">
+            <span class="payment-badge">VISA</span>
+            <span class="payment-badge">MASTERCARD</span>
+            <span class="payment-badge">AMEX</span>
+            <span class="payment-badge">APPLE PAY</span>
+            <span class="payment-badge">PAYPAL</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Navigation -->
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="footer-col-header">
+            <h4 class="footer-col-title">Quick Navigation</h4>
+          </div>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop All Products</a></li>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="contact.html">Get in Touch</a></li>
+            <li><a href="wishlist.html">My Saved Wishlist</a></li>
+            <li><a href="cart.html">Shopping Bag</a></li>
+            <li><a href="login.html">Customer Account</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Get in Touch -->
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="footer-col-header">
+            <h4 class="footer-col-title">Get in Touch</h4>
+          </div>
+          <div class="footer-contact-list">
+            <div class="footer-contact-item">
+              <div class="contact-icon-pill" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <a href="tel:1234567890">123-456-7890</a>
+                <small>Mon – Fri, 9am – 6pm EST</small>
+              </div>
+            </div>
+
+            <div class="footer-contact-item">
+              <div class="contact-icon-pill" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <a href="mailto:hello@kidokids.com">hello@kidokids.com</a>
+                <small>24/7 dedicated support</small>
+              </div>
+            </div>
+
+            <div class="footer-contact-item">
+              <div class="contact-icon-pill" aria-hidden="true">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <span>500 Terry Francine St.</span>
+                <small>San Francisco, CA 94158</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-social-section">
+            <span class="footer-social-label">Follow Our Adventures</span>
+            <ul class="footer-social-icons">
+              <li>
+                <a href="#" class="footer-social-btn" aria-label="Instagram">
+                  <svg viewBox="0 0 24 24">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="none" stroke="currentColor" stroke-width="2"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="footer-social-btn" aria-label="Facebook">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="currentColor"></path>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="footer-social-btn" aria-label="Twitter">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" fill="currentColor"></path>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="footer-social-btn" aria-label="LinkedIn">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" fill="currentColor"></path>
+                    <circle cx="4" cy="4" r="2" fill="currentColor"></circle>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="footer-social-btn" aria-label="YouTube">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" fill="none" stroke="currentColor" stroke-width="2"></path>
+                    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"></polygon>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="footer-social-btn" aria-label="TikTok">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Col 4: Customer Care -->
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="footer-col-header">
+            <h4 class="footer-col-title">Customer Care</h4>
+          </div>
+          <ul class="footer-links-list">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Accessibility Statement</a></li>
+            <li><a href="#">Shipping Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Refund & Exchange Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Bottom Copyright -->
+        <div class="col-12">
+          <div class="footer-bottom-bar">
+            <p>© 2026 Kido Kids Inc. All rights reserved.</p>
+            <p>
+              Developed by
+              <a target="_blank" rel="noopener noreferrer" href="https://www.weoryx.com/">WeOryx</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Container -->
+  <div class="toast-container-custom"></div>
+
+  <!-- Scripts -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/products-data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/login.js"></script>
+</body>
+
+</html>

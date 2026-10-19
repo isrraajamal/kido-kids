@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Secure Checkout | Kido Kids</title>
+    <meta
+      name="description"
+      content="Complete your Kido Kids order securely with 256-bit SSL encryption, express delivery, and flexible payment options."
+    />
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+    <link rel="apple-touch-icon" href="images/favicon.svg" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/home-enhancements.css" />
+  </head>
+  <body class="checkout-page-body">
+    <!-- Minimalist Distraction-Free Header -->
+    <header class="checkout-header">
+      <div class="container">
+        <div class="checkout-header-inner">
+          <a class="checkout-logo" href="index.html" aria-label="Kido Kids Home">
+            <svg
+              preserveAspectRatio="none"
+              data-bbox="20 20 160 160"
+              viewBox="20 20 160 160"
+              height="24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+              data-type="color"
+              role="presentation"
+              aria-hidden="true"
+            >
+              <g>
+                <path
+                  d="M100.002 139.589h-.004L100 140c0 22.091-17.909 40-40 40s-40-17.909-40-40c0-21.953 17.685-39.776 39.586-39.998v-.003C37.685 99.776 20 81.954 20 60c0-22.092 17.909-40 40-40 21.4 0 38.875 16.805 39.948 37.938h.105C101.125 36.805 118.6 20 140 20c22.091 0 40 17.909 40 40 0 21.954-17.687 39.778-39.589 39.998v.003C162.313 100.222 180 118.045 180 140c0 22.091-17.909 40-40 40s-40-17.909-40-40l.002-.411z"
+                  fill="#000"
+                  clip-rule="evenodd"
+                  fill-rule="evenodd"
+                ></path>
+              </g>
+            </svg>
+            <span>Kido Kids</span>
+          </a>
+
+          <div class="checkout-trust-badge">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            <span>256-Bit SSL Encrypted Checkout</span>
+          </div>
+
+          <a href="cart.html" class="checkout-return-cart">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            <span>Back to Bag</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Checkout Container -->
+    <main class="checkout-main-wrap">
+      <div class="container">
+        <!-- Breadcrumb Tracker -->
+        <nav class="checkout-breadcrumb" aria-label="Checkout Progress">
+          <ol>
+            <li><a href="cart.html">Shopping Bag</a></li>
+            <li class="sep">›</li>
+            <li class="active" aria-current="step">Information &amp; Shipping</li>
+            <li class="sep">›</li>
+            <li>Payment</li>
+            <li class="sep">›</li>
+            <li>Confirmation</li>
+          </ol>
+        </nav>
+
+        <!-- Empty Cart State -->
+        <div class="checkout-empty-state" id="checkoutEmptyState" style="display: none;">
+          <div class="empty-state-card">
+            <div class="empty-icon-wrap">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+              </svg>
+            </div>
+            <h3>Your Shopping Bag is Empty</h3>
+            <p>You need items in your cart before you can proceed with checkout.</p>
+            <a href="shop.html" class="custom-btn">Discover Collections</a>
+          </div>
+        </div>
+
+        <!-- Order Success State (Populated on order completion) -->
+        <div class="checkout-success-view" id="checkoutSuccessView" style="display: none;">
+          <div class="success-card">
+            <div class="success-animation-wrap">
+              <div class="success-icon-circle">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+            </div>
+
+            <span class="success-badge">ORDER CONFIRMED</span>
+            <h2 id="successCustomerName">Thank you for your order!</h2>
+            <p class="success-order-num">
+              Order Reference: <strong id="successOrderNumber">#KIDO-2026-LIVE</strong>
+            </p>
+            <p class="success-msg">
+              We have received your order and sent a detailed receipt with doorstep tracking to <strong id="successCustomerEmail">your email</strong>.
+            </p>
+
+            <div class="success-details-box">
+              <div class="success-detail-row">
+                <span>Estimated Doorstep Delivery:</span>
+                <strong id="successEstDelivery">In 3–5 Business Days</strong>
+              </div>
+              <div class="success-detail-row">
+                <span>Shipping Destination:</span>
+                <strong id="successShipAddress">Standard Shipping</strong>
+              </div>
+              <div class="success-detail-row">
+                <span>Payment Method:</span>
+                <strong id="successPaymentMethod">Credit Card (Paid)</strong>
+              </div>
+              <div class="success-detail-row total-highlight">
+                <span>Amount Paid:</span>
+                <strong id="successTotalPaid">$0.00</strong>
+              </div>
+            </div>
+
+            <div class="success-actions">
+              <a href="shop.html" class="custom-btn primary-btn">Continue Shopping</a>
+              <a href="index.html" class="custom-btn outline-btn">Return to Home</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2-Column Main Checkout Grid -->
+        <div class="row g-4" id="checkoutMainGrid">
+          <!-- Left Column: Checkout Information & Forms -->
+          <div class="col-lg-7">
+            <form id="checkoutForm" novalidate>
+              <!-- 1. Express Checkout Simulation -->
+              <div class="checkout-card express-checkout-card">
+                <div class="express-label">
+                  <span>Express Checkout</span>
+                </div>
+                <div class="express-buttons-grid">
+                  <!-- Apple Pay -->
+                  <button type="button" class="express-btn express-apple-pay" id="btnExpressApplePay" aria-label="Pay with Apple Pay">
+                    <svg class="apple-pay-icon" width="48" height="20" viewBox="0 0 170 170" fill="currentColor" aria-hidden="true">
+                      <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.69-3.04-7.67-7.85-11.93-14.42-6.19-9.57-11.05-20.73-14.58-33.47-3.53-12.74-5.3-24.36-5.3-34.87 0-14.03 3.63-25.56 10.89-34.58 7.26-9.03 16.48-13.62 27.67-13.79 5.33 0 11.01 1.41 17.04 4.24 6.03 2.83 10.02 4.3 11.97 4.41 1.63 0 5.76-1.57 12.39-4.71 6.63-3.15 12.54-4.59 17.73-4.32 13.81.76 24.64 5.92 32.49 15.49-12.18 7.39-18.17 17.51-17.96 30.34.22 10.01 4.08 18.33 11.58 24.96 7.5 6.63 16.32 10.44 26.44 11.42-2.18 6.53-4.79 13.06-7.83 19.58zm-29.07-104.9c0-6.74 2.45-13.05 7.34-18.92 4.9-5.87 11.01-9.79 18.34-11.75 1.09 5.87.6 11.64-1.47 17.3-2.07 5.66-5.49 10.66-10.28 15-4.46 3.92-9.41 6.42-14.85 7.51-.54-2.83-.81-5.88-.81-9.14z"></path>
+                    </svg>
+                    <span class="apple-pay-text">Pay</span>
+                  </button>
+
+                  <!-- Google Pay -->
+                  <button type="button" class="express-btn express-google-pay" id="btnExpressGooglePay" aria-label="Pay with Google Pay">
+                    <svg class="google-pay-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                      <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+                      <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/>
+                      <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 10.03 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+                      <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+                    </svg>
+                    <span class="google-pay-text">Pay</span>
+                  </button>
+
+                  <!-- PayPal -->
+                  <button type="button" class="express-btn express-paypal" id="btnExpressPaypal" aria-label="Pay with PayPal">
+                    <svg class="paypal-logo-svg" width="76" height="20" viewBox="0 0 100 28" fill="none" aria-hidden="true">
+                      <!-- Dual-P Monogram -->
+                      <path d="M13.2 4.8C12.8 2 10.6 0 7.5 0H1.2C.5 0 0 .5 0 1.2L4.5 26.8c.1.5.5.9 1 .9h5.1c.5 0 1-.4 1.1-.9l1.4-8.8c.1-.5.5-.9 1-.9h2.3c5.6 0 9.9-2.3 11.2-8.8.6-2.9.1-5.1-1.5-6.6-1.8-1.8-4.7-2.3-8.2-2.3l-.2 1.5c3 0 5.4.1 6.8 1.5 1.3 1.3 1.6 3.2 1.2 5.6-1.1 5.6-4.8 7.5-9.5 7.5h-2.3c-.6 0-1.1.5-1.2 1.1l-1.5 9.3H5.2L2.4 2.5h4.3c3 0 5.1 1.9 5.5 4.6l1-2.3z" fill="#003087"/>
+                      <path d="M23.6 10.4c-.6 2.9-2.6 8.8-9.4 8.8h-2.3c-.6 0-1.1.5-1.2 1.1l-1.9 12c-.1.5.3.9.8.9h4.8c.5 0 1-.4 1.1-.9l1.3-8.3c.1-.5.5-.9 1-.9h2.3c5.6 0 9.9-2.3 11.2-8.8.6-2.9.1-5.1-1.5-6.6-1.7-1.6-4.5-2.1-7.9-2.1l-.1.4c2.8 0 5 .4 6.4 1.8 1.3 1.2 1.6 3 1.1 5.3z" fill="#0079C1"/>
+                      <!-- PayPal Wordmark -->
+                      <text x="35" y="21" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="800" font-style="italic" font-size="20" fill="#003087">Pay<tspan fill="#0079C1">Pal</tspan></text>
+                    </svg>
+                  </button>
+                </div>
+
+                <div class="express-divider">
+                  <span>OR PAY WITH CARD BELOW</span>
+                </div>
+              </div>
+
+              <!-- 2. Contact Information Card -->
+              <div class="checkout-card">
+                <div class="checkout-card-header">
+                  <h4>1. Contact Details</h4>
+                  <span class="step-sub" id="checkoutUserWelcome">Guest Checkout</span>
+                </div>
+
+                <div class="row g-3">
+                  <div class="col-12">
+                    <label for="checkoutEmail" class="form-label">Email address <span class="req">*</span></label>
+                    <input
+                      type="email"
+                      class="form-control kido-input"
+                      id="checkoutEmail"
+                      placeholder="parent@example.com"
+                      required
+                    />
+                    <div class="invalid-feedback">Please enter a valid email address.</div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-check kido-check">
+                      <input class="form-check-input" type="checkbox" id="chkNewsletter" checked />
+                      <label class="form-check-label" for="chkNewsletter">
+                        Keep me updated on exclusive seasonal drops and organic care tips
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 3. Shipping Address Card -->
+              <div class="checkout-card">
+                <div class="checkout-card-header">
+                  <h4>2. Delivery Address</h4>
+                  <span class="step-sub">Ships in eco-friendly packaging</span>
+                </div>
+
+                <div class="row g-3">
+                  <div class="col-12">
+                    <label for="shipCountry" class="form-label">Country / Region <span class="req">*</span></label>
+                    <select class="form-select kido-input" id="shipCountry" required>
+                      <option value="US" selected>United States</option>
+                      <option value="EG">Egypt</option>
+                      <option value="GB">United Kingdom</option>
+                      <option value="CA">Canada</option>
+                      <option value="AE">United Arab Emirates</option>
+                      <option value="SA">Saudi Arabia</option>
+                      <option value="DE">Germany</option>
+                      <option value="FR">France</option>
+                    </select>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="shipFirstName" class="form-label">First name <span class="req">*</span></label>
+                    <input type="text" class="form-control kido-input" id="shipFirstName" placeholder="Sarah" required />
+                    <div class="invalid-feedback">First name is required.</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="shipLastName" class="form-label">Last name <span class="req">*</span></label>
+                    <input type="text" class="form-control kido-input" id="shipLastName" placeholder="Miller" required />
+                    <div class="invalid-feedback">Last name is required.</div>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="shipAddress" class="form-label">Street address <span class="req">*</span></label>
+                    <input type="text" class="form-control kido-input" id="shipAddress" placeholder="124 Organic Meadow Way" required />
+                    <div class="invalid-feedback">Delivery address is required.</div>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="shipApartment" class="form-label">Apartment, suite, unit (optional)</label>
+                    <input type="text" class="form-control kido-input" id="shipApartment" placeholder="Apt 4B" />
+                  </div>
+
+                  <div class="col-md-5">
+                    <label for="shipCity" class="form-label">City <span class="req">*</span></label>
+                    <input type="text" class="form-control kido-input" id="shipCity" placeholder="Portland" required />
+                    <div class="invalid-feedback">City is required.</div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <label for="shipState" class="form-label">State / Region <span class="req">*</span></label>
+                    <input type="text" class="form-control kido-input" id="shipState" placeholder="Oregon" required />
+                    <div class="invalid-feedback">State is required.</div>
+                  </div>
+
+                  <div class="col-md-3">
+                    <label for="shipZip" class="form-label">Postal code <span class="req">*</span></label>
+                    <input type="text" class="form-control kido-input" id="shipZip" placeholder="97201" required />
+                    <div class="invalid-feedback">Postal code is required.</div>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="shipPhone" class="form-label">Phone number <span class="req">*</span></label>
+                    <input type="tel" class="form-control kido-input" id="shipPhone" placeholder="+1 (555) 234-5678" required />
+                    <div class="form-text">Used by local couriers for doorstep delivery updates.</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 4. Shipping Method Card -->
+              <div class="checkout-card">
+                <div class="checkout-card-header">
+                  <h4>3. Shipping Method</h4>
+                  <span class="step-sub">Carbon-Neutral Delivery</span>
+                </div>
+
+                <div class="shipping-options-list">
+                  <label class="shipping-option-item active" for="shipMethodStandard">
+                    <div class="shipping-option-radio">
+                      <input type="radio" name="shippingMethod" id="shipMethodStandard" value="standard" checked />
+                    </div>
+                    <div class="shipping-option-info">
+                      <div class="shipping-option-title">
+                        <strong>Standard Eco-Delivery</strong>
+                        <span class="shipping-badge free" id="standardShipBadge">FREE</span>
+                      </div>
+                      <p class="shipping-option-desc">Arrives in 3–5 business days with door-to-door tracking</p>
+                    </div>
+                    <div class="shipping-option-price" id="standardShipPriceDisplay">FREE</div>
+                  </label>
+
+                  <label class="shipping-option-item" for="shipMethodExpress">
+                    <div class="shipping-option-radio">
+                      <input type="radio" name="shippingMethod" id="shipMethodExpress" value="express" />
+                    </div>
+                    <div class="shipping-option-info">
+                      <div class="shipping-option-title">
+                        <strong>Express Priority Courier</strong>
+                        <span class="shipping-badge express">FASTEST</span>
+                      </div>
+                      <p class="shipping-option-desc">Dispatched within 12h • Arrives in 1–2 business days</p>
+                    </div>
+                    <div class="shipping-option-price">$9.99</div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- 5. Payment Details Card -->
+              <div class="checkout-card">
+                <div class="checkout-card-header">
+                  <h4>4. Payment Method</h4>
+                  <span class="step-sub">Encrypted &amp; PCI-DSS Level 1 Compliant</span>
+                </div>
+
+                <div class="payment-tabs-group">
+                  <div class="payment-tab-row">
+                    <label class="payment-tab-item active" for="payMethodCard">
+                      <input type="radio" name="paymentMethod" id="payMethodCard" value="card" checked />
+                      <span>Credit / Debit Card</span>
+                      <div class="card-brand-icons">
+                        <span class="brand-badge visa">VISA</span>
+                        <span class="brand-badge mc">MC</span>
+                        <span class="brand-badge amex">AMEX</span>
+                      </div>
+                    </label>
+
+                    <label class="payment-tab-item" for="payMethodCod">
+                      <input type="radio" name="paymentMethod" id="payMethodCod" value="cod" />
+                      <span>Cash on Delivery (COD)</span>
+                    </label>
+                  </div>
+
+                  <!-- Card Payment Fields Container -->
+                  <div class="payment-fields-panel" id="cardFieldsPanel">
+                    <div class="row g-3">
+                      <div class="col-12">
+                        <label for="cardName" class="form-label">Name on card <span class="req">*</span></label>
+                        <input type="text" class="form-control kido-input" id="cardName" placeholder="Sarah Miller" required />
+                      </div>
+
+                      <div class="col-12">
+                        <label for="cardNumber" class="form-label">Card number <span class="req">*</span></label>
+                        <div class="card-input-wrap">
+                          <input
+                            type="text"
+                            class="form-control kido-input"
+                            id="cardNumber"
+                            placeholder="4532 •••• •••• 8892"
+                            maxlength="19"
+                            required
+                          />
+                          <span class="card-type-indicator" id="cardTypeIndicator">
+                            <svg width="22" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                              <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                              <line x1="2" y1="10" x2="22" y2="10"></line>
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <label for="cardExpiry" class="form-label">Expiry date (MM/YY) <span class="req">*</span></label>
+                        <input
+                          type="text"
+                          class="form-control kido-input"
+                          id="cardExpiry"
+                          placeholder="MM / YY"
+                          maxlength="5"
+                          required
+                        />
+                      </div>
+
+                      <div class="col-md-6">
+                        <label for="cardCvv" class="form-label">Security code (CVV) <span class="req">*</span></label>
+                        <div class="cvv-input-wrap">
+                          <input
+                            type="password"
+                            class="form-control kido-input"
+                            id="cardCvv"
+                            placeholder="CVC"
+                            maxlength="4"
+                            required
+                          />
+                          <span class="cvv-hint-icon" title="3-digit code on back of card">?</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Cash on Delivery Panel -->
+                  <div class="payment-fields-panel cod-panel" id="codFieldsPanel" style="display: none;">
+                    <div class="cod-notice-box">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                      </svg>
+                      <div>
+                        <strong>Pay upon Doorstep Arrival</strong>
+                        <p>Have exact cash ready for the courier. Our drivers carry contactless card terminals as well.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Submit Button & Trust Row -->
+              <div class="checkout-submit-area">
+                <button type="submit" class="checkout-submit-btn" id="placeOrderBtn">
+                  <span class="btn-spinner" id="btnSpinner" style="display: none;"></span>
+                  <span id="btnPayText">Pay $0.00 • Place Order</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                  </svg>
+                </button>
+
+                <div class="checkout-guarantee-row">
+                  <div class="guarantee-item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <span>30-Day Free Exchanges</span>
+                  </div>
+                  <div class="guarantee-item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                    <span>Organic Fabric Guarantee</span>
+                  </div>
+                  <div class="guarantee-item">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="16" x2="12" y2="12"></line>
+                      <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                    </svg>
+                    <span>No Hidden Fees</span>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- Right Column: Sticky Order Summary -->
+          <div class="col-lg-5">
+            <aside class="checkout-summary-card">
+              <div class="summary-header">
+                <h3>Order Summary</h3>
+                <span class="summary-count-badge" id="checkoutItemCountBadge">0 items</span>
+              </div>
+
+              <!-- Cart Items List -->
+              <div class="checkout-items-scroll" id="checkoutItemsList">
+                <!-- Dynamically populated from localStorage.kido_cart_items -->
+              </div>
+
+              <!-- Promo Code Input -->
+              <div class="checkout-coupon-box">
+                <div class="coupon-field-row">
+                  <input
+                    type="text"
+                    id="checkoutCouponInput"
+                    class="checkout-coupon-input"
+                    placeholder="Discount code (e.g. KIDOFUN20)"
+                  />
+                  <button type="button" id="checkoutCouponBtn" class="checkout-coupon-btn">Apply</button>
+                </div>
+                <div id="checkoutCouponMsg" class="checkout-coupon-msg"></div>
+              </div>
+
+              <!-- Pricing Breakdown -->
+              <div class="checkout-pricing-breakdown">
+                <div class="price-row">
+                  <span>Subtotal</span>
+                  <strong id="chkSubtotal">$0.00</strong>
+                </div>
+
+                <div class="price-row" id="chkDiscountRow" style="display: none;">
+                  <span class="discount-label">
+                    Discount
+                    <span class="discount-pill" id="chkDiscountBadge">20% OFF</span>
+                  </span>
+                  <strong class="discount-amount" id="chkDiscountAmount">-$0.00</strong>
+                </div>
+
+                <div class="price-row">
+                  <span>Shipping</span>
+                  <span id="chkShippingDisplay" class="shipping-status-val">FREE</span>
+                </div>
+
+                <div class="price-row">
+                  <span>Estimated Tax (5%)</span>
+                  <strong id="chkTax">$0.00</strong>
+                </div>
+
+                <div class="price-divider"></div>
+
+                <div class="price-row grand-total-row">
+                  <span>Total Due</span>
+                  <div class="total-wrap">
+                    <span class="currency">USD</span>
+                    <strong class="grand-total-amount" id="chkGrandTotal">$0.00</strong>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Security Reassurance Callout -->
+              <div class="checkout-security-callout">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <p>Every Kido Kids order is packaged in 100% biodegradable cornstarch mailers and protected by our Happiness Guarantee.</p>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/products-data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/checkout.js"></script>
+  </body>
+</html>

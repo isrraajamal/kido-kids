@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Brand Pale Lime squircle tile with crisp border for dark & light browser tabs -->
+  <rect x="8" y="8" width="184" height="184" rx="52" fill="#ebfac2" stroke="#2d2a2a" stroke-opacity="0.14" stroke-width="4"/>
+  <!-- Kido 4-Lobe Flower Mark centered with optimal optical margin -->
+  <g transform="translate(100 100) scale(0.76) translate(-100 -100)">
+    <path d="M100.002 139.589h-.004L100 140c0 22.091-17.909 40-40 40s-40-17.909-40-40c0-21.953 17.685-39.776 39.586-39.998v-.003C37.685 99.776 20 81.954 20 60c0-22.092 17.909-40 40-40 21.4 0 38.875 16.805 39.948 37.938h.105C101.125 36.805 118.6 20 140 20c22.091 0 40 17.909 40 40 0 21.954-17.687 39.778-39.589 39.998v.003C162.313 100.222 180 118.045 180 140c0 22.091-17.909 40-40 40s-40-17.909-40-40l.002-.411z" fill="#2d2a2a" clip-rule="evenodd" fill-rule="evenodd"/>
+  </g>
+</svg>
